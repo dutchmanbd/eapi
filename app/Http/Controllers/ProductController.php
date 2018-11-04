@@ -107,6 +107,11 @@ public function __construct(){
      */
     public function destroy(Product $product)
     {
-        //
+        $product->delete();
+
+        return response([
+            'status' => "success",
+            'message' => "Product deleted."
+        ], Response::HTTP_ACCEPTED);
     }
 }
